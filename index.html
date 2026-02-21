@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Estoque v5.2.3 (Professional Dark)</title>
+    <title>Estoque v5.2.4 (Professional Dark)</title>
     
     <link rel="icon" href="icone.png" type="image/png">
     <link rel="apple-touch-icon" href="icone.png">
@@ -59,26 +59,32 @@
         </div>
     </div>
 
-    <!-- Modal de configuração de alerta (com unidade) -->
+    <!-- Modal de configuração de alerta (com selects de unidade) -->
     <div id="modal-alerta" class="modal-overlay" style="display:none;">
-        <div class="modal-box" style="max-width: 320px;">
+        <div class="modal-box" style="max-width: 340px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <span style="font-weight: bold;">⚙️ Configurar Alerta</span>
                 <button onclick="fecharModalAlerta()" style="background: none; border: none; font-size: 20px; color: var(--accent);">✖</button>
             </div>
             <div style="margin-bottom: 15px; text-align: left;">
-                <label style="display: flex; align-items: center; gap: 5px;">
-                    <span style="flex: 1;">Qtd. Mínima</span>
-                    <span id="unidade-min" class="unidade-badge">kg</span>
-                </label>
-                <input type="number" id="alerta-min" placeholder="0 (sem alerta)" style="width: 100%; padding: 10px;">
+                <label style="display: block; margin-bottom: 5px;">Qtd. Mínima</label>
+                <div style="display: flex; gap: 8px;">
+                    <input type="number" id="alerta-min" placeholder="0" style="flex: 2; padding: 10px;">
+                    <select id="alerta-min-unidade" style="flex: 1; padding: 10px;">
+                        <option value="kg">kg</option><option value="g">g</option><option value="uni">uni</option>
+                        <option value="pct">pct</option><option value="cx">cx</option><option value="bld">bld</option><option value="crt">crt</option>
+                    </select>
+                </div>
             </div>
             <div style="margin-bottom: 20px; text-align: left;">
-                <label style="display: flex; align-items: center; gap: 5px;">
-                    <span style="flex: 1;">Qtd. Máxima</span>
-                    <span id="unidade-max" class="unidade-badge">kg</span>
-                </label>
-                <input type="number" id="alerta-max" placeholder="0 (sem alerta)" style="width: 100%; padding: 10px;">
+                <label style="display: block; margin-bottom: 5px;">Qtd. Máxima</label>
+                <div style="display: flex; gap: 8px;">
+                    <input type="number" id="alerta-max" placeholder="0" style="flex: 2; padding: 10px;">
+                    <select id="alerta-max-unidade" style="flex: 1; padding: 10px;">
+                        <option value="kg">kg</option><option value="g">g</option><option value="uni">uni</option>
+                        <option value="pct">pct</option><option value="cx">cx</option><option value="bld">bld</option><option value="crt">crt</option>
+                    </select>
+                </div>
             </div>
             <div class="modal-buttons">
                 <button onclick="salvarAlerta()" style="flex: 1; background-color: var(--btn-green); color: white;">Salvar</button>
